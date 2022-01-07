@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(255, 140, 0, 0.575);">
+    <a class="navbar-brand" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: x-large;">BAHÇEDEN</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="/">Anasayfa <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="/sepet">Ürünlerimiz</a>
+        <a class="nav-item nav-link" href="/iletisim">İletişim</a>
+        <li class="nav-item" style="margin-left: 1250px;">
+          <a class="nav-link" href="register" *ngIf="!servis.OturumKontrol()">Kayıt Ol</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login" *ngIf="!servis.OturumKontrol()">Giriş Yap</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link" href="kayitlar" *ngIf="servis.OturumKontrol()">Admin Paneli</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" *ngIf="servis.OturumKontrol()" (click)="OturumKapat()">Çıkış Yap</a>
+        </li>
+      </div>
+    </div>
+  </nav>
+
+
+
+  
+  <footer class="bg-light text-center text-lg-start fixed-footer">
+    <!-- Copyright -->
+    
+
+  </footer>
+
+
+<router-outlet></router-outlet>

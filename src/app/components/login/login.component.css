@@ -1,0 +1,17 @@
+.background{
+    background:url('https://wallpaperaccess.com/full/1101714.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-position:center center ;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.login{
+    float: left;
+    padding-top: 10%;
+    padding-left: 10%;
+}
+.mnv{
+    padding-left: 4%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgba(255, 255, 255, 0.322);
+}

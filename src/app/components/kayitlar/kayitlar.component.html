@@ -1,0 +1,78 @@
+<div class="background ">
+<div class="container" style="padding-top: 5%;">
+  <div class="row">
+    <div class="col-md-8 bg- alert alert-primary">
+      <h4>Ürün Kayıtları</h4>
+        <table class="table">
+          <thead>
+            <th>Ürün Adı</th>
+            <th>Ürün Fiyatı</th>
+        
+            <th>Düzenle</th>
+            <th>Sil</th>
+            </thead>
+          <tbody>
+            <tr *ngFor="let kayit of kayitlar">
+              <td>{{kayit.urunad}}</td>
+              <td>{{kayit.urunfiyat}}</td>
+            
+              
+              <td><button class="btn btn-outline-primary" (click)="KayitDuzenle(kayit)">Düzenle</button></td>
+              <td><button class="btn btn-outline-danger" (click)="KayitSil(kayit)">Sil</button></td>
+            </tr>
+          </tbody>
+        </table>
+      <hr>
+    </div>
+    <div class="col-md-4 bg- alert alert-warning">
+      <h4>Ürün ekle - düzenle</h4>
+      <hr>
+      <form #frm="ngForm" (submit)="Kaydet()">
+      <div class="form-group">
+        <label>Ürün Adı </label>
+        <input type="text" class="form-control" name="adsoyad" [(ngModel)]="secKayit.urunad" required>
+        <input type="hidden" class="form-control" name="key" [(ngModel)]="secKayit.key">
+      </div>
+   
+      
+      <div class="form-group ">
+        <label>Ürün Fiyatı</label>
+        <input type="text" class="form-control" name="mail" [(ngModel)]="secKayit.urunfiyat" required>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Kaydet" class="btn btn-outline-success" [disabled]="frm.invalid">
+      
+      </div>
+      </form>
+      <div [ngClass]="sonuc.islem ? 'alert alert-success': 'alert alert-danger'" *ngIf="sonuc.mesaj?.length>0">{{sonuc.mesaj}}</div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container mt-5 ">
+  <div class="row">
+    <div class="col-md-8 bg- alert alert-danger">
+      <h4>Üyeler</h4>
+        <table class="table">
+          <thead>
+            <th>Üye Adı</th>
+            <th>E-mail</th>
+        
+            
+            </thead>
+          <tbody>
+            <tr *ngFor="let uye of uyeler">
+              <td>{{uye.adsoyad}}</td>
+              <td>{{uye.mail}}</td>
+            </tr>
+          </tbody>
+        </table>
+      <hr>
+      
+    </div>
+   
+</div>
+
+</div>

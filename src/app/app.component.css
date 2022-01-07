@@ -1,0 +1,12 @@
+.fixed-header, .fixed-footer{
+    width: 100%;
+    position: fixed;
+   
+    
+    color: rgb(0, 0, 0);
+}
+
+  .fixed-footer{
+    bottom: 0;
+  }
+  

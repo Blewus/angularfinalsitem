@@ -1,0 +1,58 @@
+
+<div class="background "> 
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 bg- alert alert-primary">
+      <h4>Sepetiniz</h4>
+        <table class="table">
+          <thead>
+            <th>Ürün Adı</th>
+            <th>Ürün Kilo</th>
+             <th>Toplam</th>
+           
+            <th>Sil</th>
+            </thead>
+          
+          <tbody>
+            <tr *ngFor="let sepet of sepetler">
+              <td>{{sepet.sepetadi}}</td>
+              <td>{{sepet.sepetfiyat}}</td>
+              <td>{{sepet.sepetfiyat}} * {{sepet.sepetadi}} </td>
+              
+              
+              <td><button class="btn btn-outline-danger" (click)="SepetSil(sepet)">Sil</button></td>
+            </tr>
+         
+          </tbody>
+         
+        </table>
+        <button class="btn btn-success" style="float: right;"[routerLink]="[ '/checkout']">Ödeme Ekranına Git</button> 
+      <hr>
+    </div>
+    <div class="col-md-4 bg- alert alert-primary">
+      <h4>Ürün ekle</h4>
+      <hr>
+      <form #frm="ngForm" (submit)="SepeteKaydet()">
+      <div class="form-group">
+        <label>Ürün Adı - Kg Fiyatı </label>
+        <select  name="admin" class="form-control"  [(ngModel)]="secSepet.sepetadi"  required>
+       
+          <option value={{kayit.urunad}}-{{kayit.urunfiyat}} *ngFor="let kayit of kayitlar">{{kayit.urunad}} - {{kayit.urunfiyat}}</option>
+       
+      </select>
+        <input type="hidden" class="form-control" name="key" [(ngModel)]="secSepet.key">
+      </div>
+      
+      
+      <div class="form-group">
+        <label>Ürün Kg</label>
+        <input type="text" class="form-control" name="mail" [(ngModel)]="secSepet.sepetfiyat" required>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Kaydet" class="btn btn-outline-success" [disabled]="frm.invalid">
+      
+      </div>
+      </form>
+  </div>
+</div>
+</div>
